@@ -1,12 +1,14 @@
 import argparse
+
 from agent.agent import Agent
 from computers import (
     BrowserbaseBrowser,
+    DockerComputer,
+    LocalPlaywrightComputer,
     ScrapybaraBrowser,
     ScrapybaraUbuntu,
-    LocalPlaywrightComputer,
-    DockerComputer,
 )
+
 
 def acknowledge_safety_check_callback(message: str) -> bool:
     response = input(

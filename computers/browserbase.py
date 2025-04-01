@@ -1,10 +1,14 @@
+import base64
 import os
-from typing import Tuple, Dict, List, Union, Optional
-from playwright.sync_api import Browser, Page, BrowserContext, Error as PlaywrightError
-from .base_playwright import BasePlaywrightComputer
+from typing import Dict, List, Optional, Tuple, Union
+
 from browserbase import Browserbase
 from dotenv import load_dotenv
-import base64
+from playwright.sync_api import Browser, BrowserContext
+from playwright.sync_api import Error as PlaywrightError
+from playwright.sync_api import Page
+
+from .base_playwright import BasePlaywrightComputer
 
 load_dotenv()
 

@@ -54,12 +54,16 @@ def create_response(**kwargs):
         "Authorization": f"Bearer {os.getenv('AZURE_OPENAI_API_KEY')}",
         "Content-Type": "application/json"
     }
+    print(f">>>Request URL: {url}\n")
+    print(json.dumps(kwargs, indent=4, ensure_ascii=False))
 
     response = requests.post(url, headers=headers, json=kwargs)
 
     if response.status_code != 200:
         print(f"Error: {response.status_code} {response.text}")
 
+    print(f">>>Response: \n")
+    print(response.json())
     return response.json()
 
 
